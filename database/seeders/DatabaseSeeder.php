@@ -21,5 +21,17 @@ class DatabaseSeeder extends Seeder
             'email' => 'rohmad@cokrogroup.com',
             'password' => Hash::make('rohmad123'),
         ]);
+
+        // data dummy for company
+        \App\Models\Company::create([
+            'name' => 'CV. Cokro Bersatu',
+            'email' => 'cokroit@gmail.com',
+            'address' => 'Jl. Hayam Wuruk, Madiun, Jawa Timur',
+            'latitude' => '-7.747033',
+            'longitude' => '110.355398',
+            'radius_km' => '0.5',
+            'time_in' => '08:00',
+            'time_out' => '17:00',
+        ]);
     }
 }

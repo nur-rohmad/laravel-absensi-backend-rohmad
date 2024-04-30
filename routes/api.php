@@ -12,4 +12,7 @@ Route::get('/user', function (Request $request) {
 
 // routes untuk login
 Route::post('/login', [App\Http\Controllers\Api\AuthController::class, 'login']);
-Route::post('/logout', [App\Http\Controllers\Api\AuthController::class, 'logout'])->middleware('auth:sanctum');
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::post('/logout', [App\Http\Controllers\Api\AuthController::class, 'logout']);
+    Route::get('/company', [App\Http\Controllers\Api\CompanyController::class, 'show']);
+});
